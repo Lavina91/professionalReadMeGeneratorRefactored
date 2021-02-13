@@ -55,9 +55,121 @@ const questions = [
     }
 ];
 
+inquirer
+    .prompt(questions).then((questions) => {
+        const userRepo = `
 
+![GitHub License](${questions.userLicense})
+
+
+### ${questions.userTitle}
+
+
+## Table of Contents
+
+[Description](#description)
+
+[Installation](#installation)
+
+[Usage](#usage)
+
+[License](#license)
+
+[Contributions](#contributions)
+
+[Tests](#tests)
+
+[Questions](#questions)
+
+
+## Description 
+
+${questions.userDescription}
+
+
+## Installation
+
+To install necessary dependencies , run the following command:
+
+------
+${questions.userInstall}
+------
+
+
+## Usage
+
+${questions.userRepo}
+
+
+## License 
+
+This project is licensed under the ${questions.userLicense} license.
+
+
+## Contributions
+
+${questions.userContribute}
+
+
+## Tests
+
+To run test, run the following command:
+
+-------
+${questions.userTest}
+-------
+
+## Questions
+
+If you have any questions about the repo, open an issue or contact me directly at ${questions.userEmail}. 
+You can find more of my work at ${questions.userGitHub}.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+`       
 // TODO: Create a function to write README file
-// function writeToFile(fileName, data) {}
+
+// created a function to make the README file
+         fs.writeFile('README1.md', userRepo, (err) =>
+         
+         err ? console.log(err) : console.log('Success!')
+         
+         )
+
+
+
+        })
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 
 // TODO: Create a function to initialize app
 // function init() {}
