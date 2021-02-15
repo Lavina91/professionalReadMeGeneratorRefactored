@@ -3,6 +3,7 @@
 // adding the packages needed for this application to run // CONNECTED
 const inquirer = require('inquirer');
 const fs = require('fs');
+const generateMarkdown = require('./utils/generateMarkdown');
 
 // TODO: Create an array of questions for user input
 // an array that will store all the questions for the user // WORKS
@@ -30,7 +31,7 @@ const questions = [
     {
         type:'checkbox',
         message:'What Licenses should your project/application have?',
-        choices:['MIT', 'Apache 2.0', 'GPL 3.0', 'BSD 3', 'none'],
+        choices:['MIT', 'Apache 2.0', 'EPL 1.0', 'BSD 3', 'None'],
         name:'userLicense'
     },
     {
@@ -55,124 +56,20 @@ const questions = [
     }
 ];
 
-inquirer
-    .prompt(questions).then((questions) => {
-        const userRepo = `
-
-![GitHub License](${questions.userLicense})
-
-
-### ${questions.userTitle}
-
-
-## Table of Contents
-
-[Description](#description)
-
-[Installation](#installation)
-
-[Usage](#usage)
-
-[License](#license)
-
-[Contributions](#contributions)
-
-[Tests](#tests)
-
-[Questions](#questions)
-
-
-## Description 
-
-${questions.userDescription}
-
-
-## Installation
-
-To install necessary dependencies , run the following command:
-
-------
-${questions.userInstall}
-------
-
-
-## Usage
-
-${questions.userRepo}
-
-
-## License 
-
-This project is licensed under the ${questions.userLicense} license.
-
-
-## Contributions
-
-${questions.userContribute}
-
-
-## Tests
-
-To run test, run the following command:
-
--------
-${questions.userTest}
--------
-
-## Questions
-
-If you have any questions about the repo, open an issue or contact me directly at ${questions.userEmail}. 
-You can find more of my work at ${questions.userGitHub}.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-`       
-// TODO: Create a function to write README file
-
-// created a function to make the README file
-         fs.writeFile('README1.md', userRepo, (err) =>
-         
-         err ? console.log(err) : console.log('Success!')
-         
-         )
-
-
-
-        })
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
+// function created to make readme file 
 // TODO: Create a function to initialize app
-// function init() {}
+const init = () => {
+
+inquirer
+    .prompt(questions)
+    .then((response) => fs.writeFileSync('README.md', generateMarkdown(response)))
+    .then (() => console.log('file was created!'))
+    .catch((err) => console.log(err)) 
+
+
+
+}
+
 
 // Function call to initialize app
-// init();
+init();
