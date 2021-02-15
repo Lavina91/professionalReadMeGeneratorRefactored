@@ -39,15 +39,15 @@ if (userLicense === 'MIT') {
 }
   else if (userLicense === 'Apache 2.0') {
 
-  return `[Apache License](https://opensource.org/licenses/Apache-2.0)`
+  return `[Apache License.](https://opensource.org/licenses/Apache-2.0)`
   }
   else if (userLicense === 'EPL 1.0') {
 
-  return `[EPL](https://opensource.org/licenses/EPL-1.0)`
+  return `[EPL.](https://opensource.org/licenses/EPL-1.0)`
   }
   else if (userLicense === 'BSD 3') {
 
-  return `[BSD License](https://opensource.org/licenses/BSD-3-Clause)`
+  return `[BSD License.](https://opensource.org/licenses/BSD-3-Clause)`
   }
   else (userLicense === 'None'); {
 
@@ -78,7 +78,7 @@ if (userLicense === 'MIT' || 'Apache 2.0' || 'EPL 1.0' || 'BSD 3') {
 
 const generateMarkdown = (response) => 
 
-  `![GitHub License](${response.userLicense})
+  `# ${renderLicenseBadge(response.userLicense)}
 
 
 ### ${response.userTitle}
@@ -122,7 +122,7 @@ ${response.userRepo}
 
 ## License 
 
-${renderLicenseSection(response.userLicense)}
+${renderLicenseSection(response.userLicense)} 
 ${renderLicenseLink(response.userLicense)}
 
 
@@ -142,7 +142,7 @@ ${response.userTest}
 ## Questions
 
 If you have any questions about the repo, open an issue or contact me directly at ${response.userEmail}. 
-You can find more of my work at ${response.userGitHub}.`
+You can find more of my work at (https://github.com${response.userGitHub}/).`
 
 
 
