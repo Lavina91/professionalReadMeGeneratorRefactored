@@ -23,7 +23,7 @@
 
 ## Description 
 
-Generates quality README files based on user input 
+Generates quality readme files based on user input
 
 
 ## Installation
@@ -40,6 +40,11 @@ npm i
 not much
 
 
+## Screenshots
+
+![Picture of questions asked to generate README file](Images/screenshot.png)
+
+
 ## License 
 
 This project is licensed under the  
@@ -48,7 +53,7 @@ This project is licensed under the
 
 ## Contributions
 
-Please open a pull request or contact me
+contact me
 
 
 ## Tests
@@ -56,16 +61,10 @@ Please open a pull request or contact me
 To run test, run the following command:
 
 -------
-npm run test
+npm test
 -------
-
-## Screenshots
-
-![Picture of questions asked to generate README file](images./screenshot.png)
 
 ## Questions
 
 If you have any questions about the repo, open an issue or contact me directly at mariolavina1991@gmail.com. 
 You can find more of my work at (https://github.comLavina91/).
-
-# professionalReadMeGeneratorRefactored
