@@ -1,15 +1,12 @@
-
-
-// adding the packages needed for this application to run // CONNECTED
+// adding the packages needed for this application to run 
 const inquirer = require('inquirer');
 const fs = require('fs');
 const utils = require('util')
 const writeFileSync = utils.promisify(fs.writeFile)
-
 const generateMarkdown = require('./utils/generateMarkdown');
 
-// TODO: Create an array of questions for user input
-// an array that will store all the questions for the user // WORKS
+
+// an array that will store all the questions for the user 
 const questions = [
     {
         type:'input',
@@ -61,14 +58,22 @@ const questions = [
     }
 ];
 
-// function created to make readme file 
-// TODO: Create a function to initialize app
+// function created to initialize the readme generator
 const init = () => {
 
+// calls the inquirer package 
 inquirer
+
+// prompts the questions for the user
     .prompt(questions)
+
+// after creates a new file named "README.md" and creates a layout based off the generateMarkdown function 
     .then((response) => writeFileSync('README.md', generateMarkdown(response)))
+
+// if everything is ok console log "file was created"   
     .then (() => console.log('file was created!'))
+
+// if not console log the error
     .catch((err) => console.log(err)) 
 
 
