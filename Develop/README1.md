@@ -42,7 +42,7 @@ not much
 
 ## Screenshots
 
-![Picture of questions asked to generate README file](Images/screenshot.png)
+![Picture of questions asked to generate README file](professionalReadMeGeneratorRefactored/Images/screenshot.png)
 
 
 ## License 
