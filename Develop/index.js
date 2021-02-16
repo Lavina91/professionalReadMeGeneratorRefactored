@@ -1,4 +1,4 @@
-// TODO: Include packages needed for this application
+
 
 // adding the packages needed for this application to run // CONNECTED
 const inquirer = require('inquirer');
@@ -32,7 +32,7 @@ const questions = [
         name:'userDescription'
     },
     {
-        type:'checkbox',
+        type:'list',
         message:'What Licenses should your project/application have?',
         choices:['MIT', 'Apache 2.0', 'EPL 1.0', 'BSD 3', 'None'],
         name:'userLicense'
