@@ -1,8 +1,10 @@
+// variable connected to index.js
 const index = require('../index')
 
 
 
-// If there is no license, return an empty string
+// function created to create license badge depending on user input
+// IF NOT, return an empty string
 function renderLicenseBadge (userLicense) {
 
 
@@ -30,7 +32,8 @@ if (userLicense === 'MIT') {
 
 }
 
-// If there is no license, return an empty string
+// function created to create license link depending on user input
+// IF NOT, return an empty string 
 function renderLicenseLink(userLicense) {
 
 if (userLicense === 'MIT') {
@@ -61,14 +64,15 @@ if (userLicense === 'MIT') {
 
 }
 
-// If there is no license, return an empty string
+// function created to display the license link section 
+// IF NOT, return an empty string
 function renderLicenseSection(userLicense) {
 
-if (userLicense === 'MIT' || 'Apache 2.0' || 'EPL 1.0' || 'BSD 3') {
+if (userLicense === 'MIT' || userLicense ==='Apache 2.0' || userLicense === 'EPL 1.0' || userLicense === 'BSD 3') {
 
   return `This project is licensed under the `
 }
-  else (userLicense === 'None'); {
+  else if (userLicense === 'None') {
 
     return ''
   }
@@ -76,6 +80,8 @@ if (userLicense === 'MIT' || 'Apache 2.0' || 'EPL 1.0' || 'BSD 3') {
 
 }
 
+
+// function to create the basic layout of the new README file
 const generateMarkdown = (response) => 
 
   `# ${renderLicenseBadge(response.userLicense)}
@@ -153,13 +159,7 @@ You can find more of my work at (https://github.com${response.userGitHub}/).`
 
 
 
-
+// 
 module.exports = generateMarkdown;
 
-// MIT - [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-// Apache 2.0 - [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-
-//Eclipse Public License 1.0 - [![License](https://img.shields.io/badge/License-EPL%201.0-red.svg)](https://opensource.org/licenses/EPL-1.0)
-
-//BSD 3 - [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
